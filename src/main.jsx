@@ -25,7 +25,9 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: "Rubik, sans-serif",
+    fontFamily: `"Playfair Display", "Montserrat", sans-serif`,
+    h1: { fontFamily: `"Geometros", sans-serif` },
+    h2: { fontFamily: `"Geometros", sans-serif` },
   },
 });
 

@@ -13,6 +13,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
   const [scrolling, setScrolling] = useState(false);
@@ -36,10 +37,13 @@ export default function Navbar() {
     <AppBar
       position="fixed"
       sx={{
-        backgroundColor: scrolling ? "#1a1a1a" : "rgba(13, 13, 13, 0.7)",
+        background: scrolling
+          ? "linear-gradient(to right, #1a1a1a, #2b2b2b)"
+          : "rgba(13, 13, 13, 0.7)",
         backdropFilter: "blur(10px)",
-        transition: "0.3s ease-in-out",
-        boxShadow: scrolling ? 3 : 0,
+        transition: "0.5s ease-in-out",
+        borderBottom: "1px solid rgba(212, 175, 55, 0.3)",
+        boxShadow: scrolling ? "0px 4px 10px rgba(212, 175, 55, 0.2)" : "none",
       }}
     >
       <Toolbar>
@@ -94,6 +98,9 @@ export default function Navbar() {
           edge="end"
           sx={{ color: "#d4af37", display: { md: "none" } }}
           onClick={toggleDrawer(true)}
+          component={motion.div}
+          whileHover={{ scale: 1.2 }}
+          transition={{ type: "spring", stiffness: 300 }}
         >
           <MenuIcon />
         </IconButton>
