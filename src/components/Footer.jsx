@@ -36,7 +36,6 @@ export default function Footer() {
                 maxWidth: "300px",
                 margin: "auto",
                 color: "white",
-                opacity: 0.8,
               }}
             >
               Creamos eventos de lujo diseñados para clientes exigentes que
