@@ -12,6 +12,7 @@
   "dependencies": {
     "@chakra-ui/icons": "^2.2.4",
     "@chakra-ui/react": "^3.8.0",
+    "@emailjs/browser": "^4.4.1",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^6.4.4",
@@ -20,6 +21,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.1.5",
+    "react-scroll": "^1.9.2",
     "react-tsparticles": "^2.12.2",
     "swiper": "^11.2.4"
   },

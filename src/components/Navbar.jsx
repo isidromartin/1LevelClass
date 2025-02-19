@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import {
   AppBar,
   Toolbar,
@@ -12,23 +11,12 @@ import {
   ListItemText,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { Link as ScrollLink } from "react-scroll";
+import { useState } from "react";
 
 export default function Navbar() {
-  const [scrolling, setScrolling] = useState(false);
   const [open, setOpen] = useState(false);
 
-  // Detectar el scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolling(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Alternar el menú en móviles
   const toggleDrawer = (state) => () => {
     setOpen(state);
   };
@@ -37,70 +25,74 @@ export default function Navbar() {
     <AppBar
       position="fixed"
       sx={{
-        background: scrolling
-          ? "linear-gradient(to right, #1a1a1a, #2b2b2b)"
-          : "rgba(13, 13, 13, 0.7)",
+        background: "linear-gradient(to right, #1a1a1a, #2b2b2b)",
+        borderBottom: `2px solid var(--gold)`,
+        boxShadow: `0px 4px 15px rgba(225, 194, 179, 0.2)`,
         backdropFilter: "blur(10px)",
-        transition: "0.5s ease-in-out",
-        borderBottom: "1px solid rgba(212, 175, 55, 0.3)",
-        boxShadow: scrolling ? "0px 4px 10px rgba(212, 175, 55, 0.2)" : "none",
       }}
     >
       <Toolbar>
         <Typography
           variant="h6"
-          sx={{ flexGrow: 1, color: "#d4af37", fontWeight: "bold" }}
+          sx={{ flexGrow: 1, color: "#E1C2B3", fontWeight: "bold" }}
         >
           1LevelClass
         </Typography>
 
-        {/* Menú para pantallas grandes */}
-        <Box sx={{ display: { xs: "none", md: "block" } }}>
+        {/* Menú en Pantallas Grandes */}
+        <Box sx={{ display: { xs: "none", md: "flex" }, gap: 3 }}>
           <Button
-            component={Link}
-            to="/"
-            sx={{ color: "#f8f5f0", "&:hover": { color: "#d4af37" } }}
+            component={ScrollLink}
+            to="home"
+            smooth
+            duration={800}
+            sx={{ color: "#f8f5f0", "&:hover": { color: "#E1C2B3" } }}
           >
             Inicio
           </Button>
           <Button
-            component={Link}
-            to="/about"
-            sx={{ color: "#f8f5f0", "&:hover": { color: "#d4af37" } }}
+            component={ScrollLink}
+            to="about"
+            smooth
+            duration={800}
+            sx={{ color: "#f8f5f0", "&:hover": { color: "#E1C2B3" } }}
           >
             Sobre Nosotros
           </Button>
           <Button
-            component={Link}
-            to="/events"
-            sx={{ color: "#f8f5f0", "&:hover": { color: "#d4af37" } }}
+            component={ScrollLink}
+            to="events"
+            smooth
+            duration={800}
+            sx={{ color: "#f8f5f0", "&:hover": { color: "#E1C2B3" } }}
           >
             Eventos
           </Button>
-          <Button
-            component={Link}
-            to="/gallery"
-            sx={{ color: "#f8f5f0", "&:hover": { color: "#d4af37" } }}
+          {/* <Button
+            component={ScrollLink}
+            to="gallery"
+            smooth
+            duration={800}
+            sx={{ color: "#f8f5f0", "&:hover": { color: "#E1C2B3" } }}
           >
             Galería
-          </Button>
+          </Button> */}
           <Button
-            component={Link}
-            to="/contact"
-            sx={{ color: "#f8f5f0", "&:hover": { color: "#d4af37" } }}
+            component={ScrollLink}
+            to="contact"
+            smooth
+            duration={800}
+            sx={{ color: "#f8f5f0", "&:hover": { color: "#E1C2B3" } }}
           >
             Contacto
           </Button>
         </Box>
 
-        {/* Menú para móviles */}
+        {/* Menú para Pantallas Pequeñas (Mobile) */}
         <IconButton
           edge="end"
-          sx={{ color: "#d4af37", display: { md: "none" } }}
+          sx={{ color: "#E1C2B3", display: { md: "none" } }}
           onClick={toggleDrawer(true)}
-          component={motion.div}
-          whileHover={{ scale: 1.2 }}
-          transition={{ type: "spring", stiffness: 300 }}
         >
           <MenuIcon />
         </IconButton>
@@ -114,24 +106,30 @@ export default function Navbar() {
               color: "#f8f5f0",
             }}
           >
-            {["Inicio", "Sobre Nosotros", "Eventos", "Galería", "Contacto"].map(
-              (text, index) => (
-                <ListItem
-                  button
-                  key={text}
-                  component={Link}
-                  to={["/", "/about", "/events", "/gallery", "/contact"][index]}
-                  onClick={toggleDrawer(false)}
-                  sx={{
-                    "&:hover": { backgroundColor: "#d4af37", color: "#0d0d0d" },
-                    padding: "10px 20px",
-                    fontWeight: "bold",
-                  }}
-                >
-                  <ListItemText primary={text} />
-                </ListItem>
-              )
-            )}
+            {[
+              { text: "Inicio", to: "home" },
+              { text: "Sobre Nosotros", to: "about" },
+              { text: "Eventos", to: "events" },
+              { text: "Galería", to: "gallery" },
+              { text: "Contacto", to: "contact" },
+            ].map((item, index) => (
+              <ListItem
+                button
+                key={index}
+                component={ScrollLink}
+                to={item.to}
+                smooth
+                duration={800}
+                onClick={toggleDrawer(false)}
+                sx={{
+                  "&:hover": { backgroundColor: "#E1C2B3", color: "#0d0d0d" },
+                  padding: "10px 20px",
+                  fontWeight: "bold",
+                }}
+              >
+                <ListItemText primary={item.text} />
+              </ListItem>
+            ))}
           </List>
         </Drawer>
       </Toolbar>

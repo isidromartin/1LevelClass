@@ -1,25 +1,38 @@
-import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Events from "./pages/Events";
-import Gallery from "./pages/Gallery";
-import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
+import { Box } from "@mui/material";
+import { Element } from "react-scroll";
+import Hero from "./components/Hero";
+import About from "./sections/About";
+import Events from "./sections/Events";
+import Gallery from "./sections/Gallery";
+import Contact from "./sections/Contact";
 
 export default function App() {
   return (
     <>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/events" element={<Events />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <Box sx={{ pt: 8 }}>
+        <Element name="home">
+          <Hero />
+        </Element>
+        <Box sx={{ pt: 10, pb: 10 }}>
+          <Element name="about">
+            <About />
+          </Element>
+        </Box>
+        <Box sx={{ pt: 10, pb: 10 }}>
+          <Element name="events">
+            <Events />
+          </Element>
+        </Box>
+        {/* <Element name="gallery">
+          <Gallery />
+        </Element> */}
+        <Element name="contact">
+          <Contact />
+        </Element>
+      </Box>
       <Footer />
     </>
   );

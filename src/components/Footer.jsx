@@ -1,97 +1,191 @@
-import { Box, Typography, Container, IconButton, Link } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Container,
+  Grid,
+  IconButton,
+  Link,
+  Divider,
+} from "@mui/material";
 import { Facebook, Instagram, Twitter, LinkedIn } from "@mui/icons-material";
 
 export default function Footer() {
   return (
     <Box
       sx={{
-        bgcolor: "#1a1a1a",
-        color: "#f8f5f0",
-        py: 4,
+        // bgcolor: "#141414",
+        color: "rgb(225, 194, 179)",
+        py: 6,
+        px: 3,
         textAlign: "center",
-        mt: 6,
+        position: "relative",
+        borderTop: "2px solid rgba(225, 194, 179, 0.3)",
       }}
     >
       <Container>
-        <Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>
-          1LevelClass
-        </Typography>
-        <Typography variant="body2" sx={{ mb: 3 }}>
-          Eventos de lujo diseñados para clientes exigentes.
-        </Typography>
+        <Grid container spacing={4} justifyContent="center">
+          {/* Columna 1: Logo y Descripción */}
+          <Grid item xs={12} md={4}>
+            <Typography variant="h5" fontWeight="bold" sx={{ mb: 2 }}>
+              1LevelClass
+            </Typography>
+            <Typography
+              variant="body2"
+              sx={{
+                opacity: 0.8,
+                maxWidth: "300px",
+                margin: "auto",
+                color: "white",
+                opacity: 0.8,
+              }}
+            >
+              Creamos eventos de lujo diseñados para clientes exigentes que
+              buscan experiencias únicas.
+            </Typography>
+          </Grid>
 
-        {/* Redes Sociales */}
-        <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
-          <IconButton
-            component="a"
-            href="#"
-            target="_blank"
-            sx={{
-              color: "#f8f5f0",
-              transition: "0.3s",
-              "&:hover": { color: "#d4af37" },
-            }}
-          >
-            <Facebook />
-          </IconButton>
-          <IconButton
-            component="a"
-            href="#"
-            target="_blank"
-            sx={{
-              color: "#f8f5f0",
-              transition: "0.3s",
-              "&:hover": { color: "#d4af37" },
-            }}
-          >
-            <Instagram />
-          </IconButton>
-          <IconButton
-            component="a"
-            href="#"
-            target="_blank"
-            sx={{
-              color: "#f8f5f0",
-              transition: "0.3s",
-              "&:hover": { color: "#d4af37" },
-            }}
-          >
-            <Twitter />
-          </IconButton>
-          <IconButton
-            component="a"
-            href="#"
-            target="_blank"
-            sx={{
-              color: "#f8f5f0",
-              transition: "0.3s",
-              "&:hover": { color: "#d4af37" },
-            }}
-          >
-            <LinkedIn />
-          </IconButton>
-        </Box>
+          {/* Columna 2: Enlaces Rápidos */}
+          <Grid item xs={12} md={4}>
+            <Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>
+              Enlaces Rápidos
+            </Typography>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+              <Link
+                href="#about"
+                underline="none"
+                sx={{
+                  color: "white",
+                  opacity: 0.8,
+                  "&:hover": { color: "rgb(225, 194, 179)" },
+                }}
+              >
+                Sobre Nosotros
+              </Link>
+              <Link
+                href="#events"
+                underline="none"
+                sx={{
+                  color: "white",
+                  opacity: 0.8,
+                  "&:hover": { color: "rgb(225, 194, 179)" },
+                }}
+              >
+                Eventos
+              </Link>
+              <Link
+                href="#gallery"
+                underline="none"
+                sx={{
+                  color: "white",
+                  opacity: 0.8,
+                  "&:hover": { color: "rgb(225, 194, 179)" },
+                }}
+              >
+                Galería
+              </Link>
+              <Link
+                href="#contact"
+                underline="none"
+                sx={{
+                  color: "white",
+                  opacity: 0.8,
+                  "&:hover": { color: "rgb(225, 194, 179)" },
+                }}
+              >
+                Contacto
+              </Link>
+            </Box>
+          </Grid>
 
-        {/* Enlaces de Footer */}
-        <Box sx={{ display: "flex", justifyContent: "center", gap: 3, mt: 3 }}>
+          {/* Columna 3: Redes Sociales */}
+          <Grid item xs={12} md={4}>
+            <Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>
+              Síguenos
+            </Typography>
+            <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
+              <IconButton
+                component="a"
+                href="#"
+                target="_blank"
+                sx={{
+                  color: "white",
+                  opacity: 0.8,
+                  "&:hover": { color: "rgb(225, 194, 179)" },
+                }}
+              >
+                <Facebook />
+              </IconButton>
+              <IconButton
+                component="a"
+                href="#"
+                target="_blank"
+                sx={{
+                  color: "white",
+                  opacity: 0.8,
+                  "&:hover": { color: "rgb(225, 194, 179)" },
+                }}
+              >
+                <Instagram />
+              </IconButton>
+              <IconButton
+                component="a"
+                href="#"
+                target="_blank"
+                sx={{
+                  color: "white",
+                  opacity: 0.8,
+                  "&:hover": { color: "rgb(225, 194, 179)" },
+                }}
+              >
+                <Twitter />
+              </IconButton>
+              <IconButton
+                component="a"
+                href="#"
+                target="_blank"
+                sx={{
+                  color: "white",
+                  opacity: 0.8,
+                  "&:hover": { color: "rgb(225, 194, 179)" },
+                }}
+              >
+                <LinkedIn />
+              </IconButton>
+            </Box>
+          </Grid>
+        </Grid>
+
+        {/* Separador */}
+        <Divider sx={{ bgcolor: "rgba(225, 194, 179, 0.2)", my: 4 }} />
+
+        {/* Enlaces Legales */}
+        <Box sx={{ display: "flex", justifyContent: "center", gap: 3 }}>
           <Link
             href="#"
             underline="none"
-            sx={{ color: "#f8f5f0", "&:hover": { color: "#d4af37" } }}
+            sx={{
+              color: "white",
+              opacity: 0.8,
+              "&:hover": { color: "rgb(225, 194, 179)" },
+            }}
           >
             Términos y Condiciones
           </Link>
           <Link
             href="#"
             underline="none"
-            sx={{ color: "#f8f5f0", "&:hover": { color: "#d4af37" } }}
+            sx={{
+              color: "white",
+              opacity: 0.8,
+              "&:hover": { color: "rgb(225, 194, 179)" },
+            }}
           >
             Política de Privacidad
           </Link>
         </Box>
 
         {/* Copyright */}
-        <Typography variant="body2" sx={{ mt: 3, opacity: 0.7 }}>
+        <Typography variant="body2" sx={{ mt: 3, opacity: 0.8 }}>
           © {new Date().getFullYear()} 1LevelClass. Todos los derechos
           reservados.
         </Typography>
