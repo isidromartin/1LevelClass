@@ -13,6 +13,12 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --gold: #e1c2b3;
+  --gold-hover: #bba194;
+  --dark: #0d0d0d;
+  --gray: #1a1a1a;
+  --white: #ffffff;
 }
 
 a {
@@ -44,7 +50,6 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -84,4 +89,45 @@ body {
   background: url("https://www.toptal.com/designers/subtlepatterns/uploads/marble-pattern.png")
     repeat;
   background-size: cover;
+  color: white;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
+
+body {
+  font-family: "Inter", sans-serif !important;
+  font-size: 16px;
+  color: var(--white);
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+button {
+  font-size: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+button,
+input,
+textarea {
+  font-family: "Inter", sans-serif !important;
 }

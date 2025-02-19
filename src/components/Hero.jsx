@@ -1,103 +1,87 @@
 import { Box, Typography, Button, Container } from "@mui/material";
 import { motion } from "framer-motion";
-import Particles from "react-tsparticles";
 
 export default function Hero() {
   return (
     <Box
       sx={{
-        position: "relative",
-        minHeight: "100vh",
+        height: "100vh",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         textAlign: "center",
-        bgcolor: "background.default",
-        color: "text.primary",
-        p: 3,
+        position: "relative",
         overflow: "hidden",
+        background:
+          "url('https://static.wixstatic.com/media/2005bd_c071cdeaa62743879b70c30b5dc850c2~mv2.jpg/v1/fill/w_1920,h_1080,al_b,q_85,enc_auto/2005bd_c071cdeaa62743879b70c30b5dc850c2~mv2.jpg') center/cover no-repeat",
       }}
     >
-      <Particles
-        id="tsparticles"
-        options={{
-          particles: {
-            number: { value: 80 },
-            color: { value: "#d4af37" },
-            shape: { type: "circle" },
-            opacity: { value: 0.2 },
-            size: { value: 2 },
-            move: { speed: 0.5 },
-          },
-        }}
-        style={{
+      {/* Overlay Oscuro */}
+      <Box
+        sx={{
           position: "absolute",
           top: 0,
           left: 0,
           width: "100%",
           height: "100%",
+          background: "rgba(0, 0, 0, 0.6)",
         }}
       />
-      {/* Imagen de fondo con efecto Parallax */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 2 }}
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          backgroundImage:
-            "url('https://static.wixstatic.com/media/2005bd_c071cdeaa62743879b70c30b5dc850c2~mv2.jpg/v1/fill/w_1920,h_1080,al_b,q_85,enc_auto/2005bd_c071cdeaa62743879b70c30b5dc850c2~mv2.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundAttachment: "fixed",
-          filter: "brightness(0.5)",
-          zIndex: -1,
-        }}
-      ></motion.div>
+
       {/* Contenido del Hero */}
-      <Container>
+      <Container sx={{ position: "relative", zIndex: 1 }}>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
+          transition={{ duration: 1 }}
         >
-          <Typography variant="h2" fontWeight="bold">
-            Creamos Experiencias Inolvidables
-          </Typography>
-          <Typography variant="h5" sx={{ mt: 2 }}>
-            Eventos de lujo con atención a cada detalle.
-          </Typography>
-        </motion.div>
-
-        {/* Botón con animación */}
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          transition={{ type: "spring", stiffness: 300 }}
-        >
-          <Button
-            variant="contained"
+          <Typography
+            variant="h2"
+            fontWeight="bold"
             sx={{
-              mt: 4,
-              background: "linear-gradient(45deg, #d4af37, #b88a30)",
-              color: "white",
-              fontWeight: "bold",
-              px: 4,
-              py: 1.5,
-              borderRadius: "30px",
-              boxShadow: "0 4px 15px rgba(212, 175, 55, 0.4)",
-              transition: "0.4s",
-              "&:hover": {
-                background: "linear-gradient(45deg, #b88a30, #8a6c1c)",
-                transform: "scale(1.05)",
-              },
+              color: "transparent",
+              background:
+                "linear-gradient(45deg, rgb(225, 194, 179), rgba(255, 255, 255, 0.8))",
+              backgroundClip: "text",
+              fontSize: { xs: "2.5rem", md: "4rem" },
             }}
           >
-            Explorar Eventos
-          </Button>
+            Creamos Experiencias Únicas
+          </Typography>
+          <Typography
+            variant="h5"
+            sx={{
+              mt: 2,
+              color: "white",
+              opacity: 0.8,
+              maxWidth: "600px",
+              margin: "auto",
+            }}
+          >
+            Eventos de lujo diseñados para quienes buscan exclusividad y
+            perfección.
+          </Typography>
+
+          {/* Botón con Animación */}
+          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+            <Button
+              variant="contained"
+              sx={{
+                mt: 4,
+                background: "rgb(225, 194, 179)",
+                color: "black",
+                fontWeight: "bold",
+                px: 5,
+                py: 1.5,
+                borderRadius: "30px",
+                boxShadow: "0 4px 15px rgba(225, 194, 179, 0.4)",
+                transition: "0.4s",
+                "&:hover": { background: "rgb(200, 170, 155)" },
+              }}
+            >
+              Descubre Más
+            </Button>
+          </motion.div>
         </motion.div>
       </Container>
     </Box>

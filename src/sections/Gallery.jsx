@@ -27,28 +27,19 @@ const images = [
 
 export default function Gallery() {
   return (
-    <Box>
-      <Box
-        sx={{
-          minHeight: "100vh",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          textAlign: "center",
-          bgcolor: "background.default",
-          color: "text.primary",
-          p: 3,
-        }}
-      >
-        <Container>
-          <Typography variant="h2" fontWeight="bold">
-            Galería
-          </Typography>
-          <Typography variant="h5" sx={{ mt: 2 }}>
-            Explora nuestra colección de eventos exclusivos en imágenes.
-          </Typography>
-        </Container>
-      </Box>
+    <Box
+      sx={{
+        position: "relative",
+        width: "100%",
+        height: "100%",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        borderRadius: "12px",
+        overflow: "hidden",
+        border: "2px solid var(--gold)",
+        boxShadow: "0px 10px 20px rgba(225, 194, 179, 0.2)",
+      }}
+    >
       <Box
         sx={{
           minHeight: "100vh",
@@ -63,7 +54,7 @@ export default function Gallery() {
       >
         <Container>
           <Typography variant="h2" fontWeight="bold" sx={{ mb: 4 }}>
-            Galería de Eventos
+            Galeria
           </Typography>
 
           {/* Carrusel de imágenes */}

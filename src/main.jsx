@@ -10,7 +10,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#d4af37", // Dorado
+      main: "#E1C2B3", // Dorado
     },
     secondary: {
       main: "#1a1a1a", // Gris oscuro
@@ -21,13 +21,16 @@ const theme = createTheme({
     },
     text: {
       primary: "#f8f5f0", // Champagne
-      secondary: "#d4af37", // Dorado
+      secondary: "#E1C2B3", // Dorado
     },
   },
   typography: {
-    fontFamily: `"Playfair Display", "Montserrat", sans-serif`,
-    h1: { fontFamily: `"Geometros", sans-serif` },
-    h2: { fontFamily: `"Geometros", sans-serif` },
+    fontFamily: `"Geometros", sans-serif`,
+    h1: { fontFamily: `"Geometros", sans-serif`, fontWeight: 700 },
+    h2: { fontFamily: `"Geometros", sans-serif`, fontWeight: 700 },
+    h3: { fontFamily: `"Geometros", sans-serif`, fontWeight: 600 },
+    body1: { fontFamily: `"Geometros", sans-serif` },
+    body2: { fontFamily: `"Geometros", sans-serif` },
   },
 });
 
