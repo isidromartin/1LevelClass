@@ -8,7 +8,6 @@ export default function VideoSection() {
         py: 6,
         textAlign: "center",
         backgroundColor: "#091C2A",
-        color: "var(--gold)",
         color: "rgb(225, 194, 179)",
         px: 3,
         position: "relative",

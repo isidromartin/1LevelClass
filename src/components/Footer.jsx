@@ -7,7 +7,7 @@ import {
   Link,
   Divider,
 } from "@mui/material";
-import { Facebook, Instagram, Twitter, LinkedIn } from "@mui/icons-material";
+import { Instagram, Email } from "@mui/icons-material";
 
 export default function Footer() {
   return (
@@ -26,6 +26,25 @@ export default function Footer() {
         <Box
           sx={{
             pb: 3,
+          }}
+        >
+          <Box
+            component="img"
+            src="logo.png"
+            alt="1LevelClass Logo"
+            sx={{ height: 100 }}
+          />
+          <Typography
+            variant="h6"
+            fontWeight="bold"
+            sx={{ color: "var(--gold)", letterSpacing: "1px" }}
+          >
+            1LevelClass
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            pb: 3,
             mb: 3,
             borderBottom: "2px solid rgba(225, 194, 179, 0.3)",
           }}
@@ -34,6 +53,7 @@ export default function Footer() {
             "Belleza con proposito. Presencia con impacto"
           </Typography>
         </Box>
+
         <Grid container spacing={4} justifyContent="center">
           {/* Columna 1: Logo y Descripción */}
           <Grid item xs={12} md={4}>
@@ -104,7 +124,7 @@ export default function Footer() {
             <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
               <IconButton
                 component="a"
-                href="#"
+                href="mailto:info1levelclass@gmail.com"
                 target="_blank"
                 sx={{
                   color: "white",
@@ -112,11 +132,11 @@ export default function Footer() {
                   "&:hover": { color: "rgb(225, 194, 179)" },
                 }}
               >
-                <Facebook />
+                <Email />
               </IconButton>
               <IconButton
                 component="a"
-                href="#"
+                href="https://www.instagram.com/1levelclass/"
                 target="_blank"
                 sx={{
                   color: "white",
@@ -126,30 +146,6 @@ export default function Footer() {
               >
                 <Instagram />
               </IconButton>
-              <IconButton
-                component="a"
-                href="#"
-                target="_blank"
-                sx={{
-                  color: "white",
-                  opacity: 0.8,
-                  "&:hover": { color: "rgb(225, 194, 179)" },
-                }}
-              >
-                <Twitter />
-              </IconButton>
-              <IconButton
-                component="a"
-                href="#"
-                target="_blank"
-                sx={{
-                  color: "white",
-                  opacity: 0.8,
-                  "&:hover": { color: "rgb(225, 194, 179)" },
-                }}
-              >
-                <LinkedIn />
-              </IconButton>
             </Box>
           </Grid>
         </Grid>
@@ -158,7 +154,7 @@ export default function Footer() {
         <Divider sx={{ bgcolor: "rgba(225, 194, 179, 0.2)", my: 4 }} />
 
         {/* Enlaces Legales */}
-        <Box sx={{ display: "flex", justifyContent: "center", gap: 3 }}>
+        {/* <Box sx={{ display: "flex", justifyContent: "center", gap: 3 }}>
           <Link
             href="#"
             underline="none"
@@ -181,7 +177,7 @@ export default function Footer() {
           >
             Política de Privacidad
           </Link>
-        </Box>
+        </Box> */}
 
         {/* Copyright */}
         <Typography variant="body2" sx={{ mt: 3, opacity: 0.8 }}>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import {
   Box,
   Typography,
@@ -9,28 +9,69 @@ import {
 } from "@mui/material";
 import emailjs from "@emailjs/browser";
 
+// export default function Contact() {
+//   const [formData, setFormData] = useState({
+//     name: "",
+//     email: "",
+//     message: "",
+//   });
+
+//   const form = useRef();
+//   const [loading, setLoading] = useState(false);
+
+//   const handleChange = (e) => {
+//     setFormData({ ...formData, [e.target.name]: e.target.value });
+//   };
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     emailjs
+//       .send(
+//         "service_51g7hen",
+//         "template_d5ygm3b",
+//         formData,
+//         "8mPVtDhb62eGi-7Yz"
+//       )
+//       .then(
+//         (response) => {
+//           console.log("SUCCESS!", response.status, response.text);
+//           alert("Mensaje enviado correctamente");
+//           form.current.reset();
+//         },
+//         (error) => {
+//           console.log("FAILED...", error);
+//         }
+//       );
+//   };
+
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const form = useRef();
+  const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    emailjs.send("service_id", "template_id", formData, "user_id").then(
-      (response) => {
-        console.log("SUCCESS!", response.status, response.text);
-        alert("Mensaje enviado correctamente");
-      },
-      (error) => {
-        console.log("FAILED...", error);
-      }
-    );
+    setLoading(true);
+
+    emailjs
+      .sendForm(
+        "service_51g7hen",
+        "template_d5ygm3b",
+        form.current,
+        "8mPVtDhb62eGi-7Yz"
+      )
+      .then(
+        (result) => {
+          alert("Mensaje enviado con éxito!");
+          console.log(result.text);
+          setLoading(false);
+          form.current.reset();
+        },
+        (error) => {
+          alert("Error al enviar el mensaje, intenta de nuevo.");
+          console.log(error.text);
+          setLoading(false);
+        }
+      );
   };
 
   return (
@@ -59,19 +100,20 @@ export default function Contact() {
 
         {/* Formulario */}
         <Box sx={{ mt: 6 }}>
-          <form onSubmit={handleSubmit}>
+          <form ref={form} onSubmit={sendEmail}>
             <Grid container spacing={3}>
               <Grid item xs={12}>
                 <TextField
                   fullWidth
+                  required
                   variant="outlined"
                   label="Nombre"
                   name="name"
-                  onChange={handleChange}
+                  // onChange={handleChange}
                   sx={{
                     bgcolor: "rgba(255,255,255,0.1)",
                     borderRadius: "10px",
-                    input: { color: "white" },
+                    input: { color: "rgb(225, 194, 179)" },
                     "& label": { color: "rgb(225, 194, 179)" },
                     "& fieldset": { borderColor: "rgb(225, 194, 179)" },
                   }}
@@ -80,15 +122,16 @@ export default function Contact() {
               <Grid item xs={12}>
                 <TextField
                   fullWidth
+                  required
                   variant="outlined"
                   label="Correo Electrónico"
                   name="email"
                   type="email"
-                  onChange={handleChange}
+                  // onChange={handleChange}
                   sx={{
                     bgcolor: "rgba(255,255,255,0.1)",
                     borderRadius: "10px",
-                    input: { color: "white" },
+                    input: { color: "rgb(225, 194, 179)" },
                     "& label": { color: "rgb(225, 194, 179)" },
                     "& fieldset": { borderColor: "rgb(225, 194, 179)" },
                   }}
@@ -97,16 +140,17 @@ export default function Contact() {
               <Grid item xs={12}>
                 <TextField
                   fullWidth
+                  required
                   variant="outlined"
                   label="Mensaje"
                   name="message"
                   multiline
                   rows={4}
-                  onChange={handleChange}
+                  // onChange={handleChange}
                   sx={{
                     bgcolor: "rgba(255,255,255,0.1)",
                     borderRadius: "10px",
-                    input: { color: "white" },
+                    input: { color: "rgb(225, 194, 179)" },
                     "& label": { color: "rgb(225, 194, 179)" },
                     "& fieldset": { borderColor: "rgb(225, 194, 179)" },
                   }}
@@ -117,6 +161,7 @@ export default function Contact() {
                   type="submit"
                   variant="contained"
                   fullWidth
+                  disabled={loading}
                   sx={{
                     mt: 2,
                     background: "rgb(225, 194, 179)",
@@ -130,7 +175,7 @@ export default function Contact() {
                     "&:hover": { background: "rgb(200, 170, 155)" },
                   }}
                 >
-                  Enviar Mensaje
+                  {loading ? "Enviando..." : "Enviar Mensaje"}
                 </Button>
               </Grid>
             </Grid>
