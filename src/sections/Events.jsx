@@ -56,7 +56,7 @@ export default function Events() {
             Eventos Exclusivos
           </Typography>
           <Typography
-            variant="h5"
+            variant="p"
             sx={{ mb: 4, maxWidth: "800px", margin: "0 auto", opacity: 0.8 }}
           >
             Cada evento que diseñamos es una obra maestra, creada para reflejar
@@ -75,7 +75,7 @@ export default function Events() {
               >
                 <Card
                   sx={{
-                    bgcolor: "#1a1a1a",
+                    bgcolor: "#091C2A",
                     color: "white",
                     borderRadius: "12px",
                     border: "2px solid rgb(225, 194, 179)",
@@ -94,10 +94,17 @@ export default function Events() {
                     alt={event.title}
                   />
                   <CardContent>
-                    <Typography variant="h6" fontWeight="bold">
+                    <Typography
+                      variant="h5"
+                      fontWeight="bold"
+                      sx={{ mt: 1, opacity: 0.8, color: "rgb(225, 194, 179)" }}
+                    >
                       {event.title}
                     </Typography>
-                    <Typography variant="body2" sx={{ mt: 1, opacity: 0.8 }}>
+                    <Typography
+                      variant="body2"
+                      sx={{ mt: 1, opacity: 0.8, color: "rgb(225, 194, 179)" }}
+                    >
                       {event.desc}
                     </Typography>
                   </CardContent>

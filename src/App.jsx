@@ -16,7 +16,7 @@ export default function App() {
         <Element name="home">
           <Hero />
         </Element>
-        <Box sx={{ pt: 10, pb: 10 }}>
+        <Box sx={{ pb: 10 }}>
           <Element name="about">
             <About />
           </Element>

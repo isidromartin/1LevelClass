@@ -48,7 +48,7 @@ export default function About() {
             Sobre Nosotros
           </Typography>
           <Typography
-            variant="h5"
+            variant="body1"
             sx={{ mb: 4, maxWidth: "800px", margin: "0 auto", opacity: 0.8 }}
           >
             En 1LevelClass, redefinimos el lujo a través de eventos exclusivos
@@ -59,7 +59,13 @@ export default function About() {
         </motion.div>
 
         {/* Grid de Información */}
-        <Grid container spacing={4} mt={4} justifyContent="center">
+        <Grid
+          container
+          spacing={4}
+          mt={4}
+          justifyContent="center"
+          color={"rgb(225, 194, 179)"}
+        >
           {[
             {
               title: "Eventos Exclusivos",
@@ -97,7 +103,7 @@ export default function About() {
               >
                 <Card
                   sx={{
-                    bgcolor: "#1a1a1a",
+                    bgcolor: "#091C2A",
                     color: "white",
                     p: 2,
                     borderRadius: "10px",
@@ -113,10 +119,17 @@ export default function About() {
                 >
                   <CardContent>
                     <Typography variant="h4">{item.icon}</Typography>
-                    <Typography variant="h6" fontWeight="bold" sx={{ mt: 2 }}>
+                    <Typography
+                      variant="h5"
+                      fontWeight="bold"
+                      sx={{ mt: 2, color: "rgb(225, 194, 179)" }}
+                    >
                       {item.title}
                     </Typography>
-                    <Typography variant="body1" sx={{ mt: 1, opacity: 0.8 }}>
+                    <Typography
+                      variant="body2"
+                      sx={{ mt: 1, opacity: 0.8, color: "rgb(225, 194, 179)" }}
+                    >
                       {item.desc}
                     </Typography>
                   </CardContent>
