@@ -12,22 +12,9 @@ export default function Hero() {
         textAlign: "center",
         position: "relative",
         overflow: "hidden",
-        background:
-          "url('https://static.wixstatic.com/media/2005bd_c071cdeaa62743879b70c30b5dc850c2~mv2.jpg/v1/fill/w_1920,h_1080,al_b,q_85,enc_auto/2005bd_c071cdeaa62743879b70c30b5dc850c2~mv2.jpg') center/cover no-repeat",
+        background: "url('hero.png')",
       }}
     >
-      {/* Overlay Oscuro */}
-      <Box
-        sx={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          background: "rgba(0, 0, 0, 0.6)",
-        }}
-      />
-
       {/* Contenido del Hero */}
       <Container sx={{ position: "relative", zIndex: 1 }}>
         <motion.div
@@ -48,7 +35,7 @@ export default function Hero() {
           >
             Creamos Experiencias Únicas
           </Typography>
-          <Typography
+          {/* <Typography
             variant="h5"
             sx={{
               mt: 2,
@@ -60,7 +47,9 @@ export default function Hero() {
           >
             Eventos de lujo diseñados para quienes buscan exclusividad y
             perfección.
-          </Typography>
+          </Typography> */}
+
+          <h2>Eventos de lujo diseñados para quienes</h2>
 
           {/* Botón con Animación */}
           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Geometros:wght@400;700&family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;500;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Geometros:wght@400;700&family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;500;700&display=swap");
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -7,7 +7,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #091c2a;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -95,7 +95,7 @@ body {
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
 
 body {
-  font-family: "Inter", sans-serif !important;
+  font-family: "Geometros", sans-serif !important;
   font-size: 16px;
   color: var(--white);
 }
@@ -129,5 +129,126 @@ p,
 button,
 input,
 textarea {
-  font-family: "Inter", sans-serif !important;
+  font-family: "Geometros", sans-serif !important;
+} */
+
+/* Importación de fuentes */
+@import url("https://fonts.googleapis.com/css2?family=Geometros:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
+
+/* Variables Globales */
+:root {
+  --font-primary: "Geometros", sans-serif;
+  --font-secondary: "Inter", sans-serif;
+
+  --gold: #e1c2b3;
+  --gold-hover: #bba194;
+  --dark: #0d0d0d;
+  --gray: #1a1a1a;
+  --white: #ffffff;
+
+  color-scheme: dark;
+  color: var(--white);
+  background-color: var(--dark);
+  font-family: var(--font-primary);
+  font-size: 16px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Enlaces */
+a {
+  font-weight: 500;
+  color: var(--gold);
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+a:hover {
+  color: var(--gold-hover);
+}
+
+/* Cuerpo */
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background: url("https://www.toptal.com/designers/subtlepatterns/uploads/marble-pattern.png")
+    repeat;
+  background-size: cover;
+  color: var(--gold);
+  font-family: var(--font-primary);
+}
+
+/* Tipografías */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+button,
+input,
+textarea {
+  font-family: var(--font-primary);
+}
+h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+h2 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+/* Botones */
+button {
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  cursor: pointer;
+  transition: border-color 0.25s ease-in-out, background 0.3s ease-in-out;
+  background-color: var(--gold);
+  color: var(--dark);
+}
+button:hover {
+  background-color: var(--gold-hover);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* SwiperJS (Si lo usas) */
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Media Query para Modo Claro (Opcional) */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
 }

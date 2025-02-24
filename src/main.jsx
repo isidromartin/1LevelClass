@@ -13,24 +13,88 @@ const theme = createTheme({
       main: "#E1C2B3", // Dorado
     },
     secondary: {
-      main: "#1a1a1a", // Gris oscuro
+      main: "#091C2A", // Gris oscuro
     },
     background: {
-      default: "#0d0d0d", // Fondo oscuro
-      paper: "#1a1a1a",
+      default: "#091C2A", // Fondo oscuro
+      paper: "#091C2A",
     },
     text: {
-      primary: "#f8f5f0", // Champagne
+      primary: "#E1C2B3", // Champagne
       secondary: "#E1C2B3", // Dorado
     },
   },
   typography: {
     fontFamily: `"Geometros", sans-serif`,
-    h1: { fontFamily: `"Geometros", sans-serif`, fontWeight: 700 },
-    h2: { fontFamily: `"Geometros", sans-serif`, fontWeight: 700 },
-    h3: { fontFamily: `"Geometros", sans-serif`, fontWeight: 600 },
-    body1: { fontFamily: `"Geometros", sans-serif` },
-    body2: { fontFamily: `"Geometros", sans-serif` },
+
+    h1: {
+      fontFamily: `"Geometros", sans-serif`,
+      fontWeight: 700,
+      fontSize: "clamp(2.5rem, 5vw, 3.2rem)",
+      lineHeight: 1.2,
+    },
+
+    h2: {
+      fontFamily: `"Geometros", sans-serif`,
+      fontWeight: 700,
+      fontSize: "clamp(2rem, 4vw, 2.5rem)",
+      lineHeight: 1.3,
+    },
+
+    h3: {
+      fontFamily: `"Geometros", sans-serif`,
+      fontWeight: 600,
+      fontSize: "clamp(1.7rem, 3.5vw, 2rem)",
+      lineHeight: 1.4,
+    },
+
+    h4: {
+      fontFamily: `"Geometros", sans-serif`,
+      fontWeight: 600,
+      fontSize: "clamp(1.4rem, 3vw, 1.8rem)",
+      lineHeight: 1.4,
+    },
+
+    h5: {
+      fontFamily: `"Geometros", sans-serif`,
+      fontWeight: 500,
+      fontSize: "clamp(1.2rem, 2.5vw, 1.5rem)",
+      lineHeight: 1.5,
+    },
+
+    h6: {
+      fontFamily: `"Geometros", sans-serif`,
+      fontWeight: 500,
+      fontSize: "clamp(1rem, 2vw, 1.3rem)",
+      lineHeight: 1.6,
+    },
+
+    body1: {
+      fontFamily: `"Geometros", sans-serif`,
+      fontWeight: 400,
+      fontSize: "clamp(0.95rem, 2vw, 1.2rem)",
+      lineHeight: 1.7,
+    },
+
+    body2: {
+      fontFamily: `"Geometros", sans-serif`,
+      fontWeight: 400,
+      fontSize: "clamp(0.85rem, 1.8vw, 1.1rem)",
+      lineHeight: 1.75,
+    },
+
+    p: {
+      fontFamily: `"Geometros", sans-serif`,
+      fontWeight: 400,
+      fontSize: "clamp(0.85rem, 1.8vw, 1.1rem)",
+      lineHeight: 1.75,
+    },
+
+    button: {
+      fontFamily: `"Geometros", sans-serif`,
+      fontWeight: 600,
+      fontSize: "clamp(0.9rem, 2vw, 1rem)",
+    },
   },
 });
 
@@ -44,8 +108,8 @@ const globalStyles = (
         width: "100%",
         height: "100%",
         overflowX: "hidden",
-        backgroundColor: "#0d0d0d", // Color de fondo global
-        color: "#f8f5f0", // Color de texto global
+        backgroundColor: "#091C2A", // Color de fondo global
+        color: "#E1C2B3", // Color de texto global
       },
     }}
   />

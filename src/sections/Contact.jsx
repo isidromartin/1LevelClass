@@ -45,7 +45,7 @@ export default function Contact() {
         borderTop: "2px solid rgba(225, 194, 179, 0.3)",
       }}
     >
-      <Container maxWidth="sm">
+      <Container maxWidth="sm" margin="20">
         <Typography
           variant="h2"
           fontWeight="bold"
@@ -53,87 +53,89 @@ export default function Contact() {
         >
           Contacto
         </Typography>
-        <Typography variant="h6" sx={{ mb: 4, opacity: 0.8 }}>
+        <Typography variant="p" sx={{ opacity: 0.8 }}>
           ¿Tienes un evento en mente? Contáctanos y hagamos que suceda.
         </Typography>
 
         {/* Formulario */}
-        <form onSubmit={handleSubmit}>
-          <Grid container spacing={3}>
-            <Grid item xs={12}>
-              <TextField
-                fullWidth
-                variant="outlined"
-                label="Nombre"
-                name="name"
-                onChange={handleChange}
-                sx={{
-                  bgcolor: "rgba(255,255,255,0.1)",
-                  borderRadius: "10px",
-                  input: { color: "white" },
-                  "& label": { color: "rgb(225, 194, 179)" },
-                  "& fieldset": { borderColor: "rgb(225, 194, 179)" },
-                }}
-              />
+        <Box sx={{ mt: 6 }}>
+          <form onSubmit={handleSubmit}>
+            <Grid container spacing={3}>
+              <Grid item xs={12}>
+                <TextField
+                  fullWidth
+                  variant="outlined"
+                  label="Nombre"
+                  name="name"
+                  onChange={handleChange}
+                  sx={{
+                    bgcolor: "rgba(255,255,255,0.1)",
+                    borderRadius: "10px",
+                    input: { color: "white" },
+                    "& label": { color: "rgb(225, 194, 179)" },
+                    "& fieldset": { borderColor: "rgb(225, 194, 179)" },
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  fullWidth
+                  variant="outlined"
+                  label="Correo Electrónico"
+                  name="email"
+                  type="email"
+                  onChange={handleChange}
+                  sx={{
+                    bgcolor: "rgba(255,255,255,0.1)",
+                    borderRadius: "10px",
+                    input: { color: "white" },
+                    "& label": { color: "rgb(225, 194, 179)" },
+                    "& fieldset": { borderColor: "rgb(225, 194, 179)" },
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  fullWidth
+                  variant="outlined"
+                  label="Mensaje"
+                  name="message"
+                  multiline
+                  rows={4}
+                  onChange={handleChange}
+                  sx={{
+                    bgcolor: "rgba(255,255,255,0.1)",
+                    borderRadius: "10px",
+                    input: { color: "white" },
+                    "& label": { color: "rgb(225, 194, 179)" },
+                    "& fieldset": { borderColor: "rgb(225, 194, 179)" },
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <Button
+                  type="submit"
+                  variant="contained"
+                  fullWidth
+                  sx={{
+                    mt: 2,
+                    background: "rgb(225, 194, 179)",
+                    color: "black",
+                    fontWeight: "bold",
+                    px: 4,
+                    py: 1.5,
+                    borderRadius: "30px",
+                    boxShadow: "0 4px 15px rgba(225, 194, 179, 0.4)",
+                    transition: "0.4s",
+                    "&:hover": { background: "rgb(200, 170, 155)" },
+                  }}
+                >
+                  Enviar Mensaje
+                </Button>
+              </Grid>
             </Grid>
-            <Grid item xs={12}>
-              <TextField
-                fullWidth
-                variant="outlined"
-                label="Correo Electrónico"
-                name="email"
-                type="email"
-                onChange={handleChange}
-                sx={{
-                  bgcolor: "rgba(255,255,255,0.1)",
-                  borderRadius: "10px",
-                  input: { color: "white" },
-                  "& label": { color: "rgb(225, 194, 179)" },
-                  "& fieldset": { borderColor: "rgb(225, 194, 179)" },
-                }}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                fullWidth
-                variant="outlined"
-                label="Mensaje"
-                name="message"
-                multiline
-                rows={4}
-                onChange={handleChange}
-                sx={{
-                  bgcolor: "rgba(255,255,255,0.1)",
-                  borderRadius: "10px",
-                  input: { color: "white" },
-                  "& label": { color: "rgb(225, 194, 179)" },
-                  "& fieldset": { borderColor: "rgb(225, 194, 179)" },
-                }}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <Button
-                type="submit"
-                variant="contained"
-                fullWidth
-                sx={{
-                  mt: 2,
-                  background: "rgb(225, 194, 179)",
-                  color: "black",
-                  fontWeight: "bold",
-                  px: 4,
-                  py: 1.5,
-                  borderRadius: "30px",
-                  boxShadow: "0 4px 15px rgba(225, 194, 179, 0.4)",
-                  transition: "0.4s",
-                  "&:hover": { background: "rgb(200, 170, 155)" },
-                }}
-              >
-                Enviar Mensaje
-              </Button>
-            </Grid>
-          </Grid>
-        </form>
+          </form>
+        </Box>
       </Container>
     </Box>
   );

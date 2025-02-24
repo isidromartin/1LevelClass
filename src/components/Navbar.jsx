@@ -25,9 +25,9 @@ export default function Navbar() {
     <AppBar
       position="fixed"
       sx={{
-        background: "linear-gradient(to right, #1a1a1a, #2b2b2b)",
+        background: "#091C2A",
         borderBottom: `2px solid var(--gold)`,
-        boxShadow: `0px 4px 15px rgba(225, 194, 179, 0.2)`,
+        boxShadow: `0px 4px 15px rgba(255, 255, 255, 0.3)`,
         backdropFilter: "blur(10px)",
       }}
     >
