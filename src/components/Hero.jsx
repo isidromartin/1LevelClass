@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 export default function Hero() {
   return (
     <Box
+      id="home"
       sx={{
         height: "100vh",
         display: "flex",
@@ -33,28 +34,26 @@ export default function Hero() {
               fontSize: { xs: "2.5rem", md: "4rem" },
             }}
           >
-            Creamos Experiencias Únicas
+            1LevelClass
           </Typography>
-          {/* <Typography
-            variant="h5"
-            sx={{
-              mt: 2,
-              color: "white",
-              opacity: 0.8,
-              maxWidth: "600px",
-              margin: "auto",
-            }}
-          >
-            Eventos de lujo diseñados para quienes buscan exclusividad y
-            perfección.
-          </Typography> */}
 
-          <h2>Eventos de lujo diseñados para quienes</h2>
+          <Typography
+            variant="h4"
+            sx={{ m: 4, opacity: 0.8, fontStyle: "italic" }}
+          >
+            Not just a pretty face, but the talent and dedication to elevate
+            your brand to the next level.
+          </Typography>
 
           {/* Botón con Animación */}
           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
             <Button
               variant="contained"
+              onClick={() =>
+                document
+                  .getElementById("about")
+                  .scrollIntoView({ behavior: "smooth" })
+              }
               sx={{
                 mt: 4,
                 background: "rgb(225, 194, 179)",

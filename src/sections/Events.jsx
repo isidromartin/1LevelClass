@@ -12,19 +12,24 @@ import { motion } from "framer-motion";
 
 const events = [
   {
-    title: "Bodas de Lujo",
-    desc: "Organizamos bodas inolvidables en los destinos más exclusivos, con una planificación impecable y servicios personalizados.",
-    img: "https://static.wixstatic.com/media/2005bd_7788c7cfa81a4c69aea032da17505012~mv2.jpg",
+    title: "Eventos en restaurantes",
+    desc: "Nuestra agencia eleva la imagen de restaurantes de lujo, atrayendo un público exclusivo, mejorando la experiencia y potenciando su visibilidad en redes y eventos especiales.",
+    img: "ev4.jpg",
   },
   {
-    title: "Eventos Corporativos",
-    desc: "Diseñamos eventos empresariales que reflejan prestigio y excelencia, con locaciones de primer nivel y servicios de alta gama.",
-    img: "https://static.wixstatic.com/media/2005bd_4c559cd801df47ec9a28f44227a1f96f~mv2.jpg",
+    title: "Eventos de moda y marcas de lujo",
+    desc: "Nuestra agencia potencia eventos de moda al aportar un toque de elegancia y dinamismo, conectando con un público selecto y maximizando la visibilidad y prestigio de cada marca.",
+    img: "ev3.jpg",
   },
   {
-    title: "Fiestas Privadas",
-    desc: "Desde celebraciones íntimas hasta galas impresionantes, creamos experiencias exclusivas para nuestros clientes más exigentes.",
-    img: "https://static.wixstatic.com/media/2005bd_896b1079f9594246ae975af0cca0bcb6~mv2.jpg",
+    title: "Eventos deportivos",
+    desc: "Nuestra agencia transforma la experiencia, aportando una imagen sofisticada y dinámica que eleva la visibilidad del evento, atrae patrocinadores y fideliza a los aficionados.",
+    img: "ev2.jpg",
+  },
+  {
+    title: "Ferias y congresos de lujo",
+    desc: "Nuestra agencia potencia ferias y congresos de lujo al realzar la imagen del evento, generar conexiones estratégicas y garantizar experiencias inolvidables",
+    img: "ev1.jpg",
   },
 ];
 
@@ -65,9 +70,18 @@ export default function Events() {
         </motion.div>
 
         {/* Grid de Tarjetas de Eventos */}
-        <Grid container spacing={4} justifyContent="center">
+        <Grid container spacing={5} justifyContent="center">
           {events.map((event, index) => (
-            <Grid item xs={12} md={4} mt={5} key={index}>
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={5}
+              lg={3}
+              xl={3}
+              mt={{ xs: 5, md: 4 }}
+              key={index}
+            >
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}

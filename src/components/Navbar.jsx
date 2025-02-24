@@ -9,6 +9,7 @@ import {
   List,
   ListItem,
   ListItemText,
+  Link,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link as ScrollLink } from "react-scroll";
@@ -32,59 +33,61 @@ export default function Navbar() {
       }}
     >
       <Toolbar>
-        <Typography
-          variant="h6"
-          sx={{ flexGrow: 1, color: "#E1C2B3", fontWeight: "bold" }}
-        >
-          1LevelClass
+        <Typography variant="h6" sx={{ flexGrow: 1 }}>
+          <Link
+            href="/"
+            underline="none"
+            sx={{ color: "#E1C2B3", fontWeight: "bold" }}
+          >
+            <img
+              src="logo.png"
+              alt="1LevelClass"
+              style={{
+                width: "10%",
+                maxWidth: "500px",
+                borderRadius: "12px",
+              }}
+            />
+          </Link>
         </Typography>
 
         {/* Menú en Pantallas Grandes */}
         <Box sx={{ display: { xs: "none", md: "flex" }, gap: 3 }}>
-          <Button
-            component={ScrollLink}
-            to="home"
-            smooth
-            duration={800}
-            sx={{ color: "#f8f5f0", "&:hover": { color: "#E1C2B3" } }}
-          >
-            Inicio
+          <Button sx={{ color: "#f8f5f0", "&:hover": { color: "#E1C2B3" } }}>
+            <Link
+              href="#home"
+              underline="none"
+              sx={{ color: "#f8f5f0", "&:hover": { color: "#E1C2B3" } }}
+            >
+              Inicio
+            </Link>
           </Button>
-          <Button
-            component={ScrollLink}
-            to="about"
-            smooth
-            duration={800}
-            sx={{ color: "#f8f5f0", "&:hover": { color: "#E1C2B3" } }}
-          >
-            Sobre Nosotros
+          <Button sx={{ color: "#f8f5f0", "&:hover": { color: "#E1C2B3" } }}>
+            <Link
+              href="#about"
+              underline="none"
+              sx={{ color: "#f8f5f0", "&:hover": { color: "#E1C2B3" } }}
+            >
+              Sobre Nosotros
+            </Link>
           </Button>
-          <Button
-            component={ScrollLink}
-            to="events"
-            smooth
-            duration={800}
-            sx={{ color: "#f8f5f0", "&:hover": { color: "#E1C2B3" } }}
-          >
-            Eventos
+          <Button sx={{ color: "#f8f5f0", "&:hover": { color: "#E1C2B3" } }}>
+            <Link
+              href="#events"
+              underline="none"
+              sx={{ color: "#f8f5f0", "&:hover": { color: "#E1C2B3" } }}
+            >
+              Eventos
+            </Link>
           </Button>
-          {/* <Button
-            component={ScrollLink}
-            to="gallery"
-            smooth
-            duration={800}
-            sx={{ color: "#f8f5f0", "&:hover": { color: "#E1C2B3" } }}
-          >
-            Galería
-          </Button> */}
-          <Button
-            component={ScrollLink}
-            to="contact"
-            smooth
-            duration={800}
-            sx={{ color: "#f8f5f0", "&:hover": { color: "#E1C2B3" } }}
-          >
-            Contacto
+          <Button sx={{ color: "#f8f5f0", "&:hover": { color: "#E1C2B3" } }}>
+            <Link
+              href="#contact"
+              underline="none"
+              sx={{ color: "#f8f5f0", "&:hover": { color: "#E1C2B3" } }}
+            >
+              Contacto
+            </Link>
           </Button>
         </Box>
 
@@ -113,22 +116,24 @@ export default function Navbar() {
               { text: "Galería", to: "gallery" },
               { text: "Contacto", to: "contact" },
             ].map((item, index) => (
-              <ListItem
-                button
-                key={index}
-                component={ScrollLink}
-                to={item.to}
-                smooth
-                duration={800}
-                onClick={toggleDrawer(false)}
-                sx={{
-                  "&:hover": { backgroundColor: "#E1C2B3", color: "#0d0d0d" },
-                  padding: "10px 20px",
-                  fontWeight: "bold",
-                }}
-              >
-                <ListItemText primary={item.text} />
-              </ListItem>
+              <Box key={index}>
+                <ScrollLink to={item.to} smooth duration={800} offset={-70}>
+                  <ListItem
+                    button
+                    onClick={toggleDrawer(false)}
+                    sx={{
+                      "&:hover": {
+                        backgroundColor: "#E1C2B3",
+                        color: "#0d0d0d",
+                      },
+                      padding: "10px 20px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    <ListItemText primary={item.text} />
+                  </ListItem>
+                </ScrollLink>
+              </Box>
             ))}
           </List>
         </Drawer>

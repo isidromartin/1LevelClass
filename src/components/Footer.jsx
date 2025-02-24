@@ -23,6 +23,17 @@ export default function Footer() {
       }}
     >
       <Container>
+        <Box
+          sx={{
+            pb: 3,
+            mb: 3,
+            borderBottom: "2px solid rgba(225, 194, 179, 0.3)",
+          }}
+        >
+          <Typography variant="h5" fontWeight="100" fontStyle="italic">
+            "Belleza con proposito. Presencia con impacto"
+          </Typography>
+        </Box>
         <Grid container spacing={4} justifyContent="center">
           {/* Columna 1: Logo y Descripción */}
           <Grid item xs={12} md={4}>
@@ -70,17 +81,6 @@ export default function Footer() {
                 }}
               >
                 Eventos
-              </Link>
-              <Link
-                href="#gallery"
-                underline="none"
-                sx={{
-                  color: "white",
-                  opacity: 0.8,
-                  "&:hover": { color: "rgb(225, 194, 179)" },
-                }}
-              >
-                Galería
               </Link>
               <Link
                 href="#contact"

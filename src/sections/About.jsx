@@ -24,6 +24,7 @@ export default function About() {
       //   color: "white",
       //   p: 6,
       // }}
+      id="about"
       sx={{
         color: "rgb(225, 194, 179)",
         py: 6,
