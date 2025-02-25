@@ -56,7 +56,7 @@ export default function Footer() {
 
         <Grid container spacing={4} justifyContent="center">
           {/* Columna 1: Logo y Descripción */}
-          <Grid item xs={12} md={4}>
+          {/* <Grid item xs={12} md={4}>
             <Typography variant="h5" fontWeight="bold" sx={{ mb: 2 }}>
               1LevelClass
             </Typography>
@@ -72,7 +72,7 @@ export default function Footer() {
               Creamos eventos de lujo diseñados para clientes exigentes que
               buscan experiencias únicas.
             </Typography>
-          </Grid>
+          </Grid> */}
 
           {/* Columna 2: Enlaces Rápidos */}
           <Grid item xs={12} md={4}>
